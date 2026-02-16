@@ -5,7 +5,7 @@ import time
 
 WINDOW_SIZE = 600
 BALL_SIZE = 40
-time_limit = 15
+time_limit = 20
 
 score = 0
 
@@ -49,7 +49,7 @@ class CoinCatcherGame:
         )
 
         self.time_text = self.canvas.create_text(
-            500, 20, text="Time: 15", font=("Arial", 16)
+            500, 20, text="Time: 20", font=("Arial", 16)
         )
 
         root.bind("<KeyPress>", self.move)
