@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 import time
 
+
 WINDOW_SIZE = 600
 BALL_SIZE = 40
 time_limit = 15
