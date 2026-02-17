@@ -3,7 +3,7 @@ import random
 import time
 
 
-WINDOW_SIZE = 600
+WINDOW_SIZE = 700
 BALL_SIZE = 40
 time_limit = 20
 
@@ -14,7 +14,7 @@ class CoinCatcherGame:
         self.root = root
         self.root.title("Coin Catcher - Tkinter Edition")
 
-        self.canvas = tk.Canvas(root, width=WINDOW_SIZE, height=WINDOW_SIZE, bg="light blue")
+        self.canvas = tk.Canvas(root, width=1920, height=1200, bg="light blue")
         self.canvas.pack()
 
         self.start_time = time.time()
@@ -109,8 +109,8 @@ class CoinCatcherGame:
 
     def end_game(self):
         self.canvas.create_text(
-            WINDOW_SIZE // 2,
-            WINDOW_SIZE // 2,
+            1920 // 4,
+            1200 // 4,
             text=f"GAME OVER\nFinal Score: {self.score}",
             font=("Arial", 24),
             fill="black"
