@@ -6,13 +6,15 @@
 int main() {    
     int roll_count, sum;
     char command;
-    int *rolls = malloc(sizeof(int) * 10);
+
+    int capacity = 10;
+
+    int *rolls = malloc(sizeof(int) * capacity);
 
     if (rolls == NULL) {
         fprintf(stderr, "Memory allocation failed\n");
         return 1;
     }
-
 
     printf("Welcome to the Dice Game!\n");
     printf("Press 'r' to roll the dice, or 'a' to average the rolls, or 'q' to quit: \n");
@@ -28,7 +30,13 @@ int main() {
                 {
                     int rand_int = (rand() % 6) + 1;
                     display_dice(rand_int);
-                    rolls[roll_count % 10] = rand_int;
+                    if(roll_count == capacity){
+                        capacity *= 2;
+                        int *temp = realloc(rolls, sizeof(*rolls) * capacity);
+                        rolls = temp;
+                    }
+                    
+                    rolls[roll_count] = rand_int;
                     roll_count++;
                     sum += rand_int;
                     break;
